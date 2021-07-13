@@ -3,17 +3,17 @@ class Hparams:
     def __init__(self):
         ### data and save path
         # path to train record file
-        self.train_record_path = '/media/tuanluong/HDD_V/datasets/id_number/extract_0606_id_number_v2.train'
+        self.train_record_path = 'ocr/tfRecord_dataset/image_info.train'
         # number of samples in train record file
-        self.num_train_sample = 573146
+        self.num_train_sample = 40152
         # path to valid record file
-        self.valid_record_path = '/media/tuanluong/HDD_V/datasets/id_number/extract_0606_id_number_v2.valid'
+        self.valid_record_path = 'ocr/tfRecord_dataset/image_info.valid'
         # number of samples in valid record file
-        self.num_valid_sample = 3213
+        self.num_valid_sample = 6406
         # path to characters file
-        self.charset_path = 'charsets/charset_size=11.txt'
+        self.charset_path = 'dataset/charset_size=42.txt'
         # path to save models
-        self.save_path = 'training_checkpoints'
+        self.save_path = 'Transformer-OCR/training_checkpoints'
         # save only best model or not
         self.save_best = False
         self.max_to_keep = 1000
@@ -22,11 +22,11 @@ class Hparams:
         # input image shape after resize and padding
         self.image_shape = (64, 500, 3)
         # index of null code in character list
-        self.nul_code = 10
+        self.nul_code = 41
         # number of characters
-        self.charset_size = 11
+        self.charset_size = 42
         # max length of output text
-        self.max_char_length = 12
+        self.max_char_length = 13
 
         ### embedding layer params
         # base model from tf.keras.application, or custom instance of tf.keras.Model

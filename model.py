@@ -199,8 +199,8 @@ class Model(object):
             # write log
             with self.train_summary_writer.as_default():
                 tf.summary.scalar('loss', total_loss, step=epoch)
-               tf.summary.scalar('character accuracy', train_char_acc, step=epoch)
-               tf.summary.scalar('sequence accuracy', train_str_acc, step=epoch)
+                tf.summary.scalar('character accuracy', train_char_acc, step=epoch)
+                tf.summary.scalar('sequence accuracy', train_str_acc, step=epoch)
 
             with self.valid_summary_writer.as_default():
                 tf.summary.scalar('character accuracy', valid_char_acc, step=epoch)
