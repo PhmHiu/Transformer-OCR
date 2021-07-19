@@ -38,8 +38,8 @@ def serialize_example(image_encoded, image_format, image_width, image_orig_width
     return example_proto.SerializeToString()
 
 def main(args):
-    null_id = 41
-    max_seqlen = 13
+    null_id = 70
+    max_seqlen = 70
     charset_path = args.charset_path
     save_path = args.out_path
     # read image filenames
@@ -72,9 +72,9 @@ def main(args):
                     image_encoded = f.read()
                 cnt += 1
                 # image/format
-                image_format = "jpg".encode()
+                image_format = "png".encode()
                 # image/width
-                image_width = 500
+                image_width = 1280
                 # image/orig_width
                 h, w, _ = cv2.imread(os.path.join(args.unpad_path, filename)).shape
                 image_orig_width = w
