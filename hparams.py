@@ -3,15 +3,15 @@ class Hparams:
     def __init__(self):
         ### data and save path
         # path to train record file
-        self.train_record_path = 'ocr/tfRecord_dataset/image_info.train'
+        self.train_record_path = 'dataset/SROIE2019/tfRecord/data.train'
         # number of samples in train record file
-        self.num_train_sample = 40152
+        self.num_train_sample = 33686
         # path to valid record file
-        self.valid_record_path = 'ocr/tfRecord_dataset/image_info.valid'
+        self.valid_record_path = 'dataset/SROIE2019/tfRecord/data.valid'
         # number of samples in valid record file
-        self.num_valid_sample = 6406
+        self.num_valid_sample = 3868
         # path to characters file
-        self.charset_path = 'dataset/charset_size=42.txt'
+        self.charset_path = 'dataset/SROIE2019/charset_size71.txt'
         # path to save models
         self.save_path = 'Transformer-OCR/training_checkpoints'
         # save only best model or not
@@ -20,13 +20,13 @@ class Hparams:
 
         ### input params
         # input image shape after resize and padding
-        self.image_shape = (64, 500, 3)
+        self.image_shape = (64, 1280, 3)
         # index of null code in character list
-        self.nul_code = 41
+        self.nul_code = 70
         # number of characters
-        self.charset_size = 42
+        self.charset_size = 71
         # max length of output text
-        self.max_char_length = 13
+        self.max_char_length = 70
 
         ### embedding layer params
         # base model from tf.keras.application, or custom instance of tf.keras.Model
