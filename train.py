@@ -1,13 +1,14 @@
 from model import Model
 
+import os
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
 import tensorflow as tf
 import numpy as np
 import pdb
-import os
+gpus = tf.config.list_physical_devices('GPU')
+print(gpus)
+tf.config.experimental.set_memory_growth(gpus[0], True)
 
-gpu_devices = tf.config.experimental.list_physical_devices('GPU')
-for device in gpu_devices:
-    tf.config.experimental.set_memory_growth(device, True)
 
 def main():
     ### create model
